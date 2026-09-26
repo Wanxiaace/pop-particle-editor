@@ -176,7 +176,7 @@ namespace pop
 		}
 		glyphBuilder.BuildRanges(&textGlyphRanges);
 		io.FontDefault = io.Fonts->AddFontFromFileTTF(
-			heitiFontPath.string().c_str(),
+			heitiFontPath.u8string().c_str(),
 			14.0f,
 			&heitiFontConfig,
 			textGlyphRanges.Data);
@@ -194,7 +194,7 @@ namespace pop
 		iconFontConfig.GlyphMinAdvanceX = 14.0f;
 
 		if (!io.Fonts->AddFontFromFileTTF(
-			iconFontPath.string().c_str(),
+			iconFontPath.u8string().c_str(),
 			14.0f,
 			&iconFontConfig,
 			iconRanges))

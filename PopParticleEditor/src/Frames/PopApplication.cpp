@@ -82,7 +82,7 @@ namespace pop
 						nfdu8char_t* path = nullptr;
 						NFD_PathSet_GetPath(outPaths, i, &path);
 
-						_bench.LoadResource(path);
+						_bench.LoadResource(std::filesystem::u8path(path));
 					}
 
 					NFD_PathSet_Free(outPaths);
@@ -183,7 +183,7 @@ namespace pop
 			return;
 		}
 
-		const std::filesystem::path path(selectedPath);
+		const std::filesystem::path path(std::filesystem::u8path(selectedPath));
 		NFD_FreePathU8(selectedPath);
 
 		std::string error;
